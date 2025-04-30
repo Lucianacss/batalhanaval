@@ -1,20 +1,39 @@
 #include <stdio.h>
 
-#define LINHAS 5
-#define COLUNAS 5
+#define LINHA 5
+#define COLUNA 5
 
 int main () {
     
-    int matriz [LINHAS][COLUNAS];
-    int soma = 0;
+    int matriz[LINHA][COLUNA];
 
-    for (int i=0; i<LINHAS; i++){
-        for (int j=0; j<COLUNAS; j++){
+    int target = 6;
+    int found =0;
+    int soma =1;
+
+    for (int i=0; i<LINHA; i++) {
+        for (int j=0; j<COLUNA; j++){
+            matriz[i][j] = soma;
             soma++;
-            matriz[i][j]=soma;
-            printf("%d ", matriz[i][j]);
+            printf("%d ", matriz [i][j]);
         }
         printf("\n");
+    }
+
+    for (int i=0; i<LINHA; i++) {
+        for (int j=0; j<COLUNA; j++){
+            if (matriz[i][j] == target){
+                printf("Elemento %d encontrado na posição (%d, %d)\n", target, i, j);
+                found = 1;
+                break;
+            }
+        }
+
+        if (found) break;
+    }
+
+    if (!found) {
+        printf("Elemento %d não encotrado na matriz\n", target);
     }
 
 
