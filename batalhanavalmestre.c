@@ -52,14 +52,34 @@ int main(){
             } 
         }
     }
-    //Posicionamento da habilidade CRUZ (centro em (3,8)):
-    int x=3;
-    int y=8;
-    for (int i=0; i<5; i++){
-        for (int j=0; j<10; j++){
-            if (i+j<13 && i+j > 9)
 
+    //Posicionamento da habilidade CRUZ (centro em (8,2)):
+    int x=8;
+    int y=2;
+    for (int i=0; i<10; i++){
+        if(i<x+2 && i>x-2){
+            tabuleiro[i][y]=5;
         }
+    }
+    for (int j=0; j<5;j++){
+        if(j<y+3 && j>y-3){
+            tabuleiro[x][j]=5;
+        }
+    }
+
+    //Posicionamento da habilidade OCTAEDRO (centro em (3,8)):
+    int z=3;
+    int w=8;
+    for (int i=0; i<5; i++){
+        if(i<z+2 && i>z-2){
+            tabuleiro[i][w]=5;
+        }
+    for (int j=0; j<10;j++){
+        if(j<w+2 && j>w-2){
+            tabuleiro[z][j]=5;
+        }
+    }
+        
     }
         
     printf("TABULEIRO COM NAVIOS E HABILIDADES POSICIONADOS\n");
